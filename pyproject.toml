@@ -10,5 +10,6 @@ dependencies = [
     "pdf2docx>=0.5.8",
     "python-multipart>=0.0.20",
     "uvicorn>=0.37.0",
-    "pymupdf==1.23.0",
+    "PyMuPDF",
+    "python-multipart>=0.0.20",
 ]
