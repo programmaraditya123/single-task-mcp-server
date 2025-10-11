@@ -21,7 +21,7 @@ def home() -> Dict[str, str]:
     return {'hello': 'this is the homepage'}
 
 @app.post('/pdf2word')
-async def pdftowordconverter(file: UploadFile) -> FileResponse | Dict[str, Any]:
+async def pdftowordconverter(file: UploadFile):
     """
     Handles file upload, calls the dedicated conversion function, 
     and manages final response/cleanup.

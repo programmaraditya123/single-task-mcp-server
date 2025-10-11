@@ -884,7 +884,7 @@ requires-dist = [
     { name = "fastapi", specifier = ">=0.118.3" },
     { name = "fastmcp", specifier = ">=2.12.4" },
     { name = "pdf2docx", specifier = ">=0.5.8" },
-    { name = "pymupdf", specifier = "==1.23.0" },
+    { name = "pymupdf" },
     { name = "python-multipart", specifier = ">=0.0.20" },
     { name = "uvicorn", specifier = ">=0.37.0" },
 ]
