@@ -20,6 +20,11 @@ def home() -> Dict[str, str]:
     """Simple health check endpoint."""
     return {'hello': 'this is the homepage'}
 
+
+@app.get('/health')
+def health():
+    return {'status':'ok'}
+
 @app.post('/pdf2word')
 async def pdftowordconverter(file: UploadFile):
     """
