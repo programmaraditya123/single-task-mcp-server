@@ -23,7 +23,7 @@ def home() -> Dict[str, str]:
 
 @app.get('/health')
 def health():
-    return {'status':'ok'}
+    return {'status':'ok','version':1}
 
 @app.post('/pdf2word')
 async def pdftowordconverter(file: UploadFile):
