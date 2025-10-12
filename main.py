@@ -37,8 +37,8 @@ async def pdftowordconverter(file: UploadFile):
     """
     # 1. Define paths for temporary files
     unique_id = uuid.uuid4()
-    pdf_path = f"temp_{unique_id}.pdf"
-    docx_path = f"temp_{unique_id}.docx"
+    pdf_path = f"/tmp/temp_{unique_id}.pdf"
+    docx_path = f"/tmp/temp_{unique_id}.docx"
     
     # 2. Save the uploaded file
     try:
