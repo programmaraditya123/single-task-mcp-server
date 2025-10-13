@@ -1,12 +1,13 @@
-FROM python:3.11-slim
+FROM python:3.10-slim
 
-WORKDIR /app
+# 🧩 Install system dependencies
+RUN apt-get update && apt-get install -y libgl1 libglib2.0-0 libxrender1 libxext6 libsm6 libice6 libcrypt1
+
+# 🧠 Upgrade pip and install requirements
+RUN pip install --upgrade pip
+COPY requirements.txt .
+RUN pip install -r requirements.txt
+
+# 🚀 Copy and run your app
 COPY . .
-
-# Install uv first, then export and install dependencies
-RUN pip install --no-cache-dir uv \
- && uv export --format requirements.txt > requirements.txt \
- && pip install --no-cache-dir -r requirements.txt
-
-EXPOSE 8080
 CMD ["uvicorn", "main:app", "--host", "0.0.0.0", "--port", "8080"]
